@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.bicocca.laboratoriodiprogettazione_java.controller.EditTireController">
+
+    <children>
+        <Pane prefHeight="540.0" prefWidth="496.0">
+            <children>
+                <Label fx:id="label" layoutX="40.0" layoutY="100.0" stylesheets="@../css/style.css" text="Marca" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="TextFieldMarcaPneum" layoutX="206.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Marca pneumatico" stylesheets="@../css/style.css" />
+                <Label fx:id="label" layoutX="40.0" layoutY="150.0" stylesheets="@../css/style.css" text="Dimensioni" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="TextFieldDimensionePneum" layoutX="243.0" layoutY="150.0" prefHeight="25.0" prefWidth="192.0" promptText="Dimensioni pneumatico" stylesheets="@../css/style.css" />
+                <Label fx:id="label" layoutX="40.0" layoutY="200.0" stylesheets="@../css/style.css" text="Q.tà" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Spinner fx:id="spinnerPneumQuan" layoutX="286.0" layoutY="201.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@../css/style.css" />
+                <Label fx:id="label" layoutX="40.0" layoutY="250.0" stylesheets="@../css/style.css" text="Prezzo" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="TextFieldPrezzoPneum" layoutX="276.0" layoutY="250.0" prefHeight="25.0" prefWidth="162.0" promptText="Prezzo singolo pneumatico" stylesheets="@../css/style.css" />
+                <Label fx:id="label" layoutX="40.0" layoutY="300.0" stylesheets="@../css/style.css" text="PFU" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="TextFieldPfu" layoutX="332.0" layoutY="300.0" prefHeight="25.0" prefWidth="104.0" promptText="PFU" stylesheets="@../css/style.css" />
+                <TextField fx:id="TextFieldScontoPneum" layoutX="334.0" layoutY="350.0" prefHeight="25.0" prefWidth="104.0" promptText="Sconto in %" stylesheets="@../css/style.css" />
+                <Label fx:id="label" layoutX="40.0" layoutY="350.0" stylesheets="@../css/style.css" text="Sconto" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label" layoutX="24.0" layoutY="14.0" stylesheets="@../css/style.css" text="Modifica Pneumatico" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font>
+                </Label>
+                <Button fx:id="button" layoutX="27.0" layoutY="456.0" mnemonicParsing="false" onAction="#CancelTireButton" prefHeight="51.0" prefWidth="136.0" text="Chiudi" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Button fx:id="buttonModifica" layoutX="346.0" layoutY="456.0" mnemonicParsing="false" onAction="#EditTireButton" prefHeight="51.0" prefWidth="136.0" text="Modifica" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Button fx:id="buttonAnnulla" layoutX="185.0" layoutY="456.0" mnemonicParsing="false" onAction="#DeleteTireButton" prefHeight="51.0" prefWidth="136.0" text="Elimina" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.bicocca.laboratoriodiprogettazione_java.controller.MainPageController">
+
+    <children>
+        <BorderPane fx:id="bpane" prefHeight="720.0" prefWidth="1280.0">
+            <center>
+                <AnchorPane fx:id="apane" prefHeight="720.0" prefWidth="980.0" stylesheets="@../css/style.css">
+                    <children>
+                        <AnchorPane fx:id="pane" layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="960.0" style="-fx-background-color: #666666;" stylesheets="@../css/style.css">
+                            <children>
+                                <Label fx:id="label" layoutX="30.0" layoutY="15.0" prefHeight="109.0" prefWidth="317.0" stylesheets="@../css/style.css" text="Benvenuto in" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="50.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="52.0" fitWidth="62.0" layoutX="895.0" layoutY="15.0" onMouseClicked="#CloseApplication" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/close.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="52.0" fitWidth="62.0" layoutX="843.0" layoutY="11.0" onMouseClicked="#MinimizeApplication" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/minimize.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="userName" layoutX="363.0" layoutY="15.0" prefHeight="109.0" prefWidth="482.0" stylesheets="@../css/style.css" text="nome" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="50.0" />
+                                    </font>
+                                </Label>
+                        <Pane fx:id="paneNews" layoutX="93.0" layoutY="124.0" prefHeight="200.0" prefWidth="750.0">
+                           <children>
+                              <HBox fx:id="newsLayout" prefHeight="200.0" prefWidth="750.0" />
+                           </children>
+                        </Pane>
+                        <TextArea fx:id="textAreaInfo" editable="false" layoutX="50.0" layoutY="412.0" prefHeight="67.0" prefWidth="860.0" style="-fx-background-radius: 25 25 25 25;" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </center>
+            <left>
+                <VBox fx:id="vbox" prefHeight="720.0" prefWidth="300.0" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="imageView" cache="true" fitHeight="190.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="SOMETIMES">
+                            <image>
+                                <Image url="@../icons/gruper.png" />
+                            </image>
+                            <effect>
+                                <Blend />
+                            </effect>
+                            <VBox.margin>
+                                <Insets left="50.0" />
+                            </VBox.margin>
+                        </ImageView>
+                        <Button fx:id="buttonLeft" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#toHome" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Home" textFill="WHITE">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font name="Bradley Hand ITC" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/home.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="buttonLeft_PrevGomme" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onMouseClicked="#toPreventivatore" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Magazzino" textFill="WHITE">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font name="Bradley Hand ITC" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/warehouse.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="buttonLeft_Officina" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#toRicambi" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Garage" textFill="WHITE">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font name="Bradley Hand ITC" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/wrench.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                  <Button fx:id="buttonLeft" alignment="BASELINE_LEFT" graphicTextGap="15.0" mnemonicParsing="false" onAction="#toClients" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Clienti" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/people.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Bradley Hand ITC" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                        <Button fx:id="buttonLeft" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="386.0" mnemonicParsing="false" onAction="#toInfo" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Impostazioni" textFill="WHITE">
+                            <padding>
+                                <Insets left="50.0" />
+                            </padding>
+                            <font>
+                                <Font name="Bradley Hand ITC" size="18.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/settings.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                  <Button fx:id="buttonLeft" alignment="BASELINE_LEFT" graphicTextGap="15.0" layoutX="10.0" layoutY="386.0" mnemonicParsing="false" onAction="#logout" prefHeight="88.0" prefWidth="300.0" stylesheets="@../css/style.css" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Bradley Hand ITC" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                    </children>
+                </VBox>
+            </left>
+        </BorderPane>
+    </children>
+</AnchorPane>

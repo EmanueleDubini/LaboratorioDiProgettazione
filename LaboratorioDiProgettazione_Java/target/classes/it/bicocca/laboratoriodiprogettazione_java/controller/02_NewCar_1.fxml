@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" prefHeight="550.0" prefWidth="500.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.bicocca.laboratoriodiprogettazione_java.controller.NewCarController"> <!-- todo fareun controller unico-->
+    <children>
+        <Pane prefHeight="550.0" prefWidth="500.0" stylesheets="@../css/style.css">
+            <children>
+
+                <!-- Intestazione -->
+                <Label fx:id="label" layoutX="17.0" layoutY="24.0" prefHeight="45.0" prefWidth="474.0" stylesheets="@../css/style.css" text="Menù guidato: Inserimento Vettura " textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+
+                <!-- Separatore -->
+                <Separator layoutY="69.0" prefHeight="21.0" prefWidth="508.0" />
+
+                <!-- Intestazione tabella -->
+                <Label fx:id="label1" layoutX="47.0" layoutY="103.0" prefHeight="45.0" prefWidth="206.0" stylesheets="@../css/style.css" text="Ricerca Cliente:" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+
+                <!-- Tabella per visualizzare i risultati della ricerca -->
+                <TableView fx:id="searchResultsTable" layoutX="46.0" layoutY="184.0" prefHeight="253.0" prefWidth="416.0" />
+
+                <!-- Pulsante Annulla -->
+                <Button fx:id="buttonDelete" layoutX="52.0" layoutY="464.0" mnemonicParsing="false" onAction="#DeleteButton" prefHeight="51.0" prefWidth="136.0" stylesheets="@../css/style.css" text="Annulla" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+
+                <!-- Pulsante Seleziona -->
+                <Button fx:id="button" layoutX="321.0" layoutY="464.0" mnemonicParsing="false" onAction="#SelectClientButton" prefHeight="51.0" prefWidth="136.0" text="Seleziona" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            <TextField fx:id="searchTextField" layoutX="265.0" layoutY="110.0" onKeyTyped="#handleSearchAction" prefHeight="32.0" prefWidth="196.0" promptText="Nome Cliente da cercare" stylesheets="@../css/style.css" />
+                
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
