@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.bicocca.laboratoriodiprogettazione_java.controller.EditRimController">
+
+<children>
+<Pane prefHeight="550.0" prefWidth="500.0">
+    <children>
+        <Label fx:id="label" layoutX="40.0" layoutY="100.0" stylesheets="@../css/style.css" text="Marca" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextFieldMarcaCerchio" layoutX="253.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Marca cerchio" stylesheets="@../css/style.css" />
+        <Label fx:id="label" layoutX="40.0" layoutY="150.0" stylesheets="@../css/style.css" text="Dimensioni" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextFieldDimensioneCerchio" layoutX="288.0" layoutY="150.0" prefHeight="25.0" prefWidth="192.0" promptText="Dimensioni cerchio" stylesheets="@../css/style.css" />
+        <Label fx:id="label" layoutX="40.0" layoutY="200.0" stylesheets="@../css/style.css" text="Q.tà" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Spinner fx:id="spinnerCerchioQuan" layoutX="332.0" layoutY="201.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@../css/style.css" />
+        <Label fx:id="label" layoutX="40.0" layoutY="250.0" stylesheets="@../css/style.css" text="Prezzo" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextFieldPrezzoCerchio" layoutX="318.0" layoutY="250.0" prefHeight="25.0" prefWidth="162.0" promptText="Prezzo singolo cerchio" stylesheets="@../css/style.css" />
+        <TextField fx:id="TextFieldScontoCerchio" layoutX="377.0" layoutY="309.0" prefHeight="25.0" prefWidth="104.0" promptText="Sconto in %" stylesheets="@../css/style.css" />
+        <Label fx:id="label" layoutX="38.0" layoutY="309.0" stylesheets="@../css/style.css" text="Sconto" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="label" layoutX="71.0" layoutY="14.0" style="-fx-font-family: RenaultLife-Bold;" stylesheets="@../css/style.css" text="Modifica Cerchio" textFill="WHITE">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Button fx:id="button" layoutX="38.0" layoutY="456.0" mnemonicParsing="false" onAction="#CancelRimButton" prefHeight="50.0" prefWidth="136.0" text="Chiudi" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonModifica" layoutX="350.0" layoutY="456.0" mnemonicParsing="false" onAction="#EditRimButton" prefHeight="51.0" prefWidth="136.0" text="Modifica" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonAnnulla" layoutX="196.0" layoutY="456.0" mnemonicParsing="false" onAction="#DeleteRimButton" prefHeight="51.0" prefWidth="136.0" text="Elimina" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>
+</children>
+        </AnchorPane>

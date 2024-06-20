@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" prefHeight="550.0" prefWidth="500.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.bicocca.laboratoriodiprogettazione_java.controller.DeletePartController">
+   <children>
+      <Pane layoutY="6.0" prefHeight="550.0" prefWidth="500.0" stylesheets="@../css/style.css">
+         <children>
+            <Label fx:id="label" layoutX="75.0" layoutY="22.0" stylesheets="@../css/style.css" text="Elimina ricambio" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="label1" layoutX="50.0" layoutY="100.0" stylesheets="@../css/style.css" text="ID Ricambio" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelIdPart" layoutX="280.0" layoutY="100.0" prefHeight="27.0" prefWidth="200.0" stylesheets="@../css/style.css" text="id" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label11" layoutX="50.0" layoutY="150.0" stylesheets="@../css/style.css" text="Nome" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNamePart" layoutX="280.0" layoutY="150.0" prefHeight="27.0" prefWidth="200.0" stylesheets="@../css/style.css" text="nome" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label111" layoutX="50.0" layoutY="200.0" stylesheets="@../css/style.css" text="Marca" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelBrandPart" layoutX="280.0" layoutY="200.0" prefHeight="27.0" prefWidth="200.0" stylesheets="@../css/style.css" text="marca" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label1111" layoutX="50.0" layoutY="250.0" stylesheets="@../css/style.css" text="Prezzo" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelPricePart" layoutX="280.0" layoutY="250.0" prefHeight="27.0" prefWidth="200.0" stylesheets="@../css/style.css" text="prezzo" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label11111" layoutX="50.0" layoutY="300.0" stylesheets="@../css/style.css" text="Quantità" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelQuantityPart" layoutX="280.0" layoutY="300.0" prefHeight="27.0" prefWidth="200.0" stylesheets="@../css/style.css" text="quantita" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonDelete" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" onAction="#DeleteButton" prefHeight="51.0" prefWidth="136.0" stylesheets="@../css/style.css" text="Annulla" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonDelete" layoutX="319.0" layoutY="450.0" mnemonicParsing="false" onAction="#DeletePartButton" prefHeight="51.0" prefWidth="136.0" text="Elimina" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
