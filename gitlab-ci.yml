@@ -1,0 +1,52 @@
+# Questo file contiene la configurazione della pipeline di GitLab CI/CD
+
+#specfica immagine Docker di Maven da utilizzare come ambiente di esecuzione, in alternativa si potrebbe mettere "image: maven:latest" per utilizzare in automatico l'ultima versione disponibile, visionabile qui: https://hub.docker.com/_/maven
+# a fini di consistenza della pipeline preferiamo fissare la versione dell'immagine di Maven da utilizzare per evitare comportamenti inaspettati futuri dovuti ad aggiornamenti
+image: maven:3.8.6
+
+# Definizione delle variabili d'ambiente
+#si definiscono delle variabili globalmente (pipeline level) per poterle poi richiamare in qualsiasi job si desidera all'interno del codice della pipeline
+variables:
+  MAVEN_CLI_OPTS: "--strict-checksums --threads 1C --batch-mode"
+  MAVEN_OPTS: -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
+
+# Definizione delle cache
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .m2/repository  # Repository del progetto Maven
+    - target    # Directory degli artefatti Maven
+
+# Definizione delle fasi della pipeline
+stages:
+  - build
+  - verify
+
+
+# Definizione fase di Build
+# Job Build che compila l'app Spring Boot con Maven
+build:
+  stage: build
+  cache:
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .m2/repository
+      - target
+  script:
+    - cd /builds/academicunimib/laboratoriodiprogettazione/LaboratorioDiProgettazione_Java
+    - mvn $MAVEN_CLI_OPTS $MAVEN_OPTS compile
+
+
+
+
+# Fase di lavoro per effettuare i test
+verify:
+  stage: verify
+  cache:
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .m2/repository
+      - target
+  script:
+    - cd /builds/academicunimib/laboratoriodiprogettazione/LaboratorioDiProgettazione_Java
+    - mvn verify

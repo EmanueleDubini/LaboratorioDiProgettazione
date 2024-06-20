@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/style.css" rel="stylesheet">
+<body>
+<div class="container d-flex m-0 p-0">
+    <div class="info-section col-12 col-lg-5 d-flex flex-column justify-content-center px-5">
+        <div class="col-10 d-flex justify-content-center align-self-center ">
+            <img class="d-block mb-5 pb-4" src="gruper.png" alt="Logo">
+        </div>
+
+        <h3 class="mb-5 mt-4">Un account per tutti i tuoi servizi</h3>
+        <h5>Consulta il tuo preventivo online</h5>
+        <h5>Tieniti aggiornato sullo stato della tua auto con i servizi connessi</h5>
+        <h5 class="mt-5 text-center"><strong>Renault care service</strong></h5>
+        <h5 class="mt-1 mb-5 text-center"><strong>Chi meglio di Renault sa prendersi cura della tua Renault?</strong></h5>
+
+        <div class="col-10 d-flex justify-content-center align-self-center mt-5 ">
+            <img class="col-7" src="loghi.png" alt=" ">
+        </div>
+    </div>
+    <div class="login-section col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center px-5">
+        <h1 class="text-center mb-3">Benvenuto in <strong>GroupeR Toolkit</strong></h1>
+        <h3 class="text-center mb-5">Accedi per usufruire dei servizi</h3>
+        <form class="w-100">
+            <h5>E-mail:</h5>
+            <input type="email" class="form-control mb-2" placeholder=" " required>
+            <h5 class="mt-4">Password:</h5>
+            <input type="password" class="form-control mb-2" placeholder=" " required>
+            <button id="loginButton" type="submit" class="btn-custom mt-5 mx-auto d-block text-center">Accedi</button>
+        </form>
+    </div>
+
+</div>
+
+<div id="loadingScreen" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; flex-direction: column; color: white; font-size: 40px;">
+    <img src="gruper_loading.png" alt="Logo" style="width: 210px; height: auto; margin-bottom: 20px;">
+    <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Caricamento...</span>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginButton = document.getElementById('loginButton');
+    const loadingScreen = document.getElementById('loadingScreen');
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+
+    function isValidEmail(email) {
+        return email.includes('@') && email.includes('.');
+    }
+
+    loginButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (isValidEmail(emailInput.value.trim()) && passwordInput.value.trim() !== '') {
+            loadingScreen.style.display = 'flex'; // Mostra lo schermo di caricamento
+
+            // Esegue la chiamata fetch per inviare i dati al server Django
+            fetch('/login/', {  // Assicurati che l'URL corrisponda a quello definito nel tuo urls.py
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `email=${encodeURIComponent(emailInput.value.trim())}&password=${encodeURIComponent(passwordInput.value.trim())}`
+            })
+            .then(response => response.text()) // Gestisce la risposta come testo
+            .then(text => {
+                loadingScreen.style.display = 'none'; // Nasconde lo schermo di caricamento
+                alert(text); // Mostra il messaggio di risposta come un alert
+            })
+            .catch(error => {
+                loadingScreen.style.display = 'none'; // Assicurati di nascondere il loading screen in caso di errore
+                alert('An error occurred: ' + error.message);
+            });
+        } else {
+            // Se l'email non è valida o la password è vuota, mostra un avviso
+            alert('Per favore, inserisci un\'e-mail valida e la password.');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

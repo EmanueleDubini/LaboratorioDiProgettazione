@@ -1,0 +1,114 @@
+:root {
+    /* FONT */
+    --fontLobster: 'Lobster', sans-serif;
+    --fontNunito: 'Nunito Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container1{
+    height: 100vh;
+}
+
+.info-section {
+    background-color: #595959;
+    height: 100%;
+    color: white;
+    flex-grow: 1;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+}
+
+.form-control{
+    border-radius: 25px;
+}
+
+.btn-custom {
+    border-radius: 25px;
+    width: 40%;
+    padding: 10px 0;
+    background-color: #ffde59;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom a {
+    border-radius: 25px;
+    width: 40%;
+    padding: 10px 0;
+    background-color: #ffde59;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #595959;
+    color: #ffffff;
+}
+
+.btn-custom:hover a {
+    background-color: #595959;
+    color: #ffffff;
+}
+
+.loadingScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background-color: #666666;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.footer-button {
+    margin-bottom: 40px;
+}
+
+.progress {
+    height: 35px;
+    border-radius: 25px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 25px;
+}
+
+a.yellow{
+    color: #ffde59;
+}
+
+.gruper{
+    width: 29vh;
+    height: 14vh;
+    text-align: center;
+}
+
+.loghi{
+    width: 33vh;
+    height: 8vh;
+}
